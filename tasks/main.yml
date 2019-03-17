@@ -17,7 +17,7 @@
   apt:
     update_cache: true
     cache_valid_time: 3600
-  tag:
+  tags:
     - apt
 
 - name: Upgrade apt packages
@@ -27,5 +27,5 @@
   until: aptupgrade is succeeded
   retries: 3
   notify: reboot
-  tag:
+  tags:
     - apt
