@@ -6,7 +6,7 @@
   environment:
     SKIP_WARNING: 1
   register: rpiupdate
-  changed_when: '"A reboot is needed" in rpiupdate'
+  changed_when: '"A reboot is needed" in rpiupdate.stdout'
   until: rpiupdate is succeeded
   retries: 3
   notify: reboot
