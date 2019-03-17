@@ -12,5 +12,10 @@ galaxy_info:
   - rpi
   - raspberry
   - upgrade
+  - rpi-update
+  - system
+  - kernel
+  - raspberry-pi
+  - upgrade
 
 dependencies: []
