@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Leon (lvlie)
+  description: Upgrades rpi
+  issue_tracker_url: https://github.com/lvlie/ansible-role-rpi_upgrade/issues
+  license: Apache
+  min_ansible_version: 2.7
+  platforms:
+  - name: Debian
+    versions:
+    - wheezy
+  galaxy_tags:
+  - rpi
+  - raspberry
+  - upgrade
+
+dependencies: []
