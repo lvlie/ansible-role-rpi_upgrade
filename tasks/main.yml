@@ -29,3 +29,16 @@
   notify: reboot
   tags:
     - apt
+
+- name: Remove old cache
+  apt:
+    autoclean: yes
+  tags:
+    - apt
+
+- name: Remove old deps
+  apt:
+    autoremove: yes
+  notify: reboot
+  tags:
+    - apt
