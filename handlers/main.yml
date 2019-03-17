@@ -1,2 +1,5 @@
 ---
-# handlers file for rpi_ugrade
+- name: reboot
+  reboot:
+    msg: "Reboot triggered by Ansible"
+    post_reboot_delay: 10

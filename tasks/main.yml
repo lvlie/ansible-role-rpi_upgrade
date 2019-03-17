@@ -7,6 +7,9 @@
     SKIP_WARNING: 1
   register: rpiupdate
   changed_when: '"A reboot is needed" in rpiupdate'
+  until: rpiupdate is succeeded
+  retries: 3
+  notify: reboot
   tags:
     - kernel
 
@@ -14,14 +17,15 @@
   apt:
     update_cache: true
     cache_valid_time: 3600
+  tag:
+    - apt
 
 - name: Upgrade apt packages
   apt:
     upgrade: dist
   register: aptupgrade
-
-- name: Reboot
-  reboot:
-    msg: "Reboot triggered by Ansible"
-    post_reboot_delay: 10
-  when: rpiupdate.changed or aptupgrade.changed
+  until: aptupgrade is succeeded
+  retries: 3
+  notify: reboot
+  tag:
+    - apt
